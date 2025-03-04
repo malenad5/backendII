@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body-login">
+    <div class="register-container">
+        <h1 class="register-title">Registrarse</h1>
+        <form action="/api/sessions/register" method="post" class="register-form">
+            <input type="text" name="first_name" placeholder="Nombre" required class="register-input">
+            <input type="text" name="last_name" placeholder="Apellido" required class="register-input">
+            <input type="email" name="email" placeholder="Correo electrónico" required class="register-input">
+            <input type="password" name="password" placeholder="Contraseña" required class="register-input">
+            <button type="submit" class="register-button">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>
