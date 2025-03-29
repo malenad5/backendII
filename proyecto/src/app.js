@@ -5,6 +5,9 @@ import logger from 'morgan'
 import { conectDB, configObject } from './config/index.js'
 import { sessionsRouter } from './router/sessions.router.js'
 import {viewsRouter} from './router/views.router.js'
+import usersRouter from './router/users.router.js';
+import productsRouter from './router/products.router.js'
+import cartRouter from "./router/cart.router.js";
 import cookieParser from 'cookie-parser'
 import handlebars from 'express-handlebars'
 import session from 'express-session'
@@ -52,6 +55,9 @@ conectDB()
 
 app.use('/', viewsRouter)
 app.use('/api/sessions', sessionsRouter)
+app.use('/api/users', usersRouter);
+app.use('/api/products', productsRouter);
+app.use("/api/carts", cartRouter);
 
 
 app.listen(PORT, ()=>{

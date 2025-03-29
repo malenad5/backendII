@@ -6,7 +6,7 @@ import { PRIVATE_KEY } from '../utils/authToken.js';
 
 
 export const initializePassport = () => {
-    // passport internamente no captura cookies
+    
     const cookieExtractor = (req) => {
         let token = null;
         if (req && req.cookies) {
@@ -15,7 +15,7 @@ export const initializePassport = () => {
         return token;
     }
 
-    // configuración de estrategia
+
     passport.use('jwt', new JWTSrategy({
         jwtFromRequest: ExtractJWT.fromExtractors([cookieExtractor]),
         secretOrKey: PRIVATE_KEY
